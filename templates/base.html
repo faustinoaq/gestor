@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1">
+    {% if self.description() %}
+    <meta name="description" content="{% block description %}{% endblock %}">
+    {% endif %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ static }}/img/favicon.ico">
+    <link rel="stylesheet" href="{{ static }}/css/base.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <h1><a href="/">{{ sitetitle }}</a></h1>
+        <a href="#" class="menu"><span></span></a>
+    </header>
+    <nav class="nav">
+        <a href="/post">{{ _("Publications") }}</a>
+        <a href="/tag">{{ _("Tags") }}</a>
+        {% if session.get('logged_in') %}
+            <a href="/post/new">{{ _("New Post") }}</a>
+            <a href="/post/draft">{{ _("Drafts") }}</a>
+            <a href="/logout">{{ _("Logout") }}</a>
+        {% else %}
+            <a href="/login" rel="nofollow">{{ _("Login") }}</a>
+        {% endif %}
+        <form action="/search" method="GET" class="search">
+            <input type="search" name="s" placeholder={{ _("'Search'") }} required>
+        </form>
+    </nav>
+    <section class="container">
+        {% block content %}{% endblock %}
+    </section>
+    <footer class="footer">
+        <div>{{ md(footer) }}</div>
+    </footer>
+</div>
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="{{ static }}/js/main.js"></script>
+</body>
+</html>

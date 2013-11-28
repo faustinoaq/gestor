@@ -1,0 +1,13 @@
+{% extends 'posts.html' %}
+
+{% block title %}
+    {% if posts %}
+        {{ _("Publications by") }} "{{ user }}"
+    {% else %}
+        {{ _("No publications by") }} "{{ user }}"
+    {% endif %}
+{% endblock %}
+
+{% block pagetitle %}{{ self.title() }}{% endblock %}
+
+{% block path %}/user/{{ user }}?{% endblock %}

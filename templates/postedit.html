@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _("Edit Post")  }} "{{ post.title  }}"{% endblock %}
+
+{% block content %}
+<h1 class="page-title">{{ _("Edit Post")  }} "{{ post.title  }}"</h1>
+<form method="POST" class="post-form">
+    <div>
+        <label for="title">{{ _("Title") }}</label>
+        <input type="text" name="title" value="{{ post.title }}" id="title" required>
+    </div>
+    <div>
+        <label for="autor">{{ _("Author") }}</label>
+        <input type="text" name="autor" value="{{ post.autor }}" id="autor" required>
+    </div>
+    <div>
+        <label for="tag">{{ _("Tags") }}</label>
+        <input type="text" name="tags" value="{{ names(post.tags) }}" id="tag" required>
+    </div>
+    <div>
+        <input type="checkbox" name="published" value="checked" id="p" {{ post.published }}>
+        <label for="p">{{ _("Publish") }}</label>
+    </div>
+    <div>
+        <input type="checkbox" name="comment" value="checked" id="c" {{ post.comment }}>
+        <label for="c">{{ _("Allow comments") }}</label>
+    </div>
+    <div>
+        <label for="content">{{ _("Content") }}</label>
+        <textarea name="content" id="content" required>{{ post.content }}</textarea>
+    </div>
+    <a href="/post/{{ post.id }}/delete" class="button danger delete">{{ _("Delete") }}</a>
+    <a href="#" class="button cancel">{{ _("Cancel") }}</a>
+    <button type="submit">{{ _("Save") }}</button>
+</form>
+{% endblock %}

@@ -1,0 +1,193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gestor\n"
+"POT-Creation-Date: 2013-11-25 00:49-0600\n"
+"PO-Revision-Date: 2013-11-25 00:49-0600\n"
+"Last-Translator: Faustino Aguilar <faustinoaq@gmail.com>\n"
+"Language-Team: Faustino Aguilar <faustinoaq@gmail.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: C:\\Users\\Yodalys\\Desktop\\gestor\\templates\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: base.html:21 posts.html:9
+msgid "Publications"
+msgstr ""
+
+#: base.html:22 post.html:19 postedit.html:17 postnew.html:17 posts.html:38
+#: tags.html:3 tags.html:5 tags.html:9
+msgid "Tags"
+msgstr ""
+
+#: base.html:24 postnew.html:3 postnew.html:6
+msgid "New Post"
+msgstr ""
+
+#: base.html:25 postdraft.html:5
+msgid "Drafts"
+msgstr ""
+
+#: base.html:26
+msgid "Logout"
+msgstr ""
+
+#: base.html:28 login.html:3 login.html:6 login.html:22
+msgid "Login"
+msgstr ""
+
+#: base.html:31
+msgid "'Search'"
+msgstr ""
+
+#: date.html:5
+msgid "Published on"
+msgstr ""
+
+#: date.html:7
+msgid "Nothing published on"
+msgstr ""
+
+#: login.html:10
+msgid "Username or password invalid"
+msgstr ""
+
+#: login.html:14
+msgid "Username"
+msgstr ""
+
+#: login.html:18
+msgid "Password"
+msgstr ""
+
+#: post.html:11 posts.html:23 tags.html:18
+msgid "Edit"
+msgstr ""
+
+#: post.html:15 posts.html:27
+msgid "By"
+msgstr ""
+
+#: post.html:27 post.html:66 posts.html:30
+msgid "Comment"
+msgstr ""
+
+#: post.html:27 posts.html:30
+msgid "Comments"
+msgstr ""
+
+#: post.html:41 postedit.html:32
+msgid "Delete"
+msgstr ""
+
+#: post.html:49
+msgid "Leave your comment"
+msgstr ""
+
+#: post.html:53
+msgid "Name"
+msgstr ""
+
+#: post.html:57
+msgid "Email"
+msgstr ""
+
+#: post.html:61
+msgid "Website"
+msgstr ""
+
+#: post.html:69
+msgid "Send"
+msgstr ""
+
+#: post.html:73
+msgid "Comments Closed"
+msgstr ""
+
+#: postdraft.html:7
+msgid "No draft"
+msgstr ""
+
+#: postedit.html:3 postedit.html:6
+msgid "Edit Post"
+msgstr ""
+
+#: postedit.html:9 postnew.html:9
+msgid "Title"
+msgstr ""
+
+#: postedit.html:13 postnew.html:13
+msgid "Author"
+msgstr ""
+
+#: postedit.html:22 postnew.html:22
+msgid "Publish"
+msgstr ""
+
+#: postedit.html:26 postnew.html:26
+msgid "Allow comments"
+msgstr ""
+
+#: postedit.html:29 postnew.html:29
+msgid "Content"
+msgstr ""
+
+#: postedit.html:33 postnew.html:32 tagedit.html:11
+msgid "Cancel"
+msgstr ""
+
+#: postedit.html:34 postnew.html:33 tagedit.html:10
+msgid "Save"
+msgstr ""
+
+#: posts.html:11
+msgid "No Publications"
+msgstr ""
+
+#: posts.html:51 tags.html:29
+msgid "Previous"
+msgstr ""
+
+#: posts.html:56 tags.html:34
+msgid "Next"
+msgstr ""
+
+#: posts.html:60 tags.html:38
+msgid "Page"
+msgstr ""
+
+#: search.html:5
+msgid "Search result for"
+msgstr ""
+
+#: search.html:7
+msgid "No search result for"
+msgstr ""
+
+#: tag.html:5
+msgid "Publications tagged as"
+msgstr ""
+
+#: tag.html:7
+msgid "No publications tagged as"
+msgstr ""
+
+#: tagedit.html:3 tagedit.html:6
+msgid "Edit Tag"
+msgstr ""
+
+#: tags.html:42
+msgid "No Tags"
+msgstr ""
+
+#: user.html:5
+msgid "Publications by"
+msgstr ""
+
+#: user.html:7
+msgid "No publications by"
+msgstr ""

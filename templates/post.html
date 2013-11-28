@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block description %}{{ more(post.content, 'ex') }}{% endblock %}
+
+{% block content %}
+<section id="p{{ post.id }}" class="post">
+    <h2 class="post-title">{{ post.title }}</h2>
+    {% if session.get('logged_in') %}
+        <a href="/post/{{ post.id }}/edit" class="button">{{ _("Edit") }}</a>
+    {% endif %}
+    <div class="info">
+        <a href="/date/{{ post.date }}">{{ datestr(post.date) }}</a>
+        <a href="/user/{{ post.autor }}">{{ _("By") }} {{ post.autor }}</a>
+    </div>
+    <article>{{ md(post.content) }}</article>
+    <div class="post-tags">
+        <div class="tags-label">{{ _("Tags") }}</div>
+        {% for tag in names(post.tags, 'list') %}
+            <a href="/tag/{{ slug(tag.name) }}/{{ tag.id }}">{{ tag.name }}</a>
+        {% endfor %}
+    </div>
+</section>
+{% if comments %}
+    <section id="c" class="comments">
+    <h3>{{ gen(counter(post.id), _("Comment"), _("Comments")) }}</h3>
+    {% for comment in comments %}
+        <article id="c{{ comment.id }}" class="comment">
+            <div>
+                <a target="_blank" rel="nofollow" href="//{{ comment.web }}">
+                <img src="//www.gravatar.com/avatar/{{ md5(comment.email) }}?s=48" width="48" height="48" class="rounded">
+                </a>
+                <div class="comment-info">
+                    <h4 class="comment-name">{{ comment.name }}</h4>
+                    <div class="comment-date">{{ datestr(comment.date) }}</div>
+                </div>
+            </div>
+            <div>{{ md_safe(comment.comment) }}</div>
+            {% if session.get('logged_in') %}
+                <a href="#" data-path="/comment/{{ comment.id }}/delete" class="button danger comment-delete">{{ _("Delete") }}</a>
+            {% endif %}
+        </article>
+    {% endfor %}
+    </section>
+{% endif %}
+{% if post.comment %}
+    <section id="n" class="comment-form">
+    <h3>{{ _("Leave your comment") }}</h3>
+    <form method="POST">
+        <div class="comment-fields">
+            <div>
+                <label for="name">{{ _("Name") }}</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="email">{{ _("Email") }}</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div>
+                <label for="web">{{ _("Website") }}</label>
+                <input type="text" name="web" id="web" placeholder="www.example.com">
+            </div>
+        </div>
+        <div>
+            <label for="comment">{{ _("Comment") }}</label>
+            <textarea name="comment" id="comment" required></textarea>
+        </div>
+        <button type="submit">{{ _("Send") }}</button>
+    </form>
+    </section>
+{% else %}
+    <h3 class="page-title">{{ _("Comments Closed") }}</h3>
+{% endif %}
+{% endblock %}

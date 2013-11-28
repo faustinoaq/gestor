@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _("Tags") }}{% endblock %}
+
+{% block description %}{{ _("Tags") }}{% endblock %}
+
+{% block content %}
+{% if tags %}
+    <h1 class="page-title">{{ _("Tags") }}</h1>
+    <section class="tags">
+    {% for tag in tags %}
+        <div id="p{{ tag.id }}" class="tag">
+            <h3 class="tag-title">
+                <a href="/tag/{{ slug(tag.name) }}/{{ tag.id }}">{{ tag.name }}</a>
+            </h3>
+            {% if session.get('logged_in') %}
+                <a href="/tag/{{ tag.id }}/edit?p={{ page }}" class="button">
+                    {{ _("Edit") }}
+                </a>
+            {% endif %}
+        </div>
+    {% endfor %}
+    </section>
+    {% if pages %}
+        <div class="pagination">
+            <div class="pager">
+            {% if page != 1 %}
+                <a href="/tag?p={{ page - 1 }}" class="button" rel="nofollow">
+                    <span class="prev"></span>{{ _("Previous") }}
+                </a>
+            {% endif %}
+            {% if pages != page %}
+                <a href="/tag?p={{ page + 1 }}" class="button" rel="nofollow">
+                    {{ _("Next") }}<span class="next"></span>
+                </a>
+            {% endif %}
+            </div>
+            <div class="page-count">{{ _("Page") }} {{ page }} - {{ pages }}</div>
+        </div>
+    {% endif %}
+{% else %}
+    <h1 class="page-title">{{ _("No Tags") }}</h1>
+{% endif %}
+{% endblock %}

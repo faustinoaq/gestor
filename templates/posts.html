@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ sitetitle }}: {{ sitedescription }}{% endblock %}
+
+{% block content %}
+<h1 class="page-title">
+    {% block pagetitle %}
+        {% if posts %}
+            {{ _("Publications") }}
+        {% else %}
+            {{ _("No Publications") }}
+        {% endif %}
+    {% endblock %}
+</h1>
+{% if posts %}
+    <section class="posts">
+    {% for post in posts %}
+        <article id="p{{ post.id }}" class="post">
+            <h2 class="post-title">
+                <a href="/post/{{ slug(post.title) }}/{{ post.id }}">{{ post.title }}</a>
+            </h2>
+            {% if session.get('logged_in') %}
+                <a href="/post/{{ post.id }}/edit" class="button">{{ _("Edit") }}</a>
+            {% endif %}
+            <div class="info">
+                <a href="/date/{{ post.date }}">{{ datestr(post.date) }}</a>
+                <a href="/user/{{ post.autor }}">{{ _("By") }} {{ post.autor }}</a>
+                {% if counter(post.id) %}
+                    <a href="/post/{{ slug(post.title) }}/{{ post.id }}#c">
+                        {{ gen(counter(post.id), _("Comment"), _("Comments")) }}
+                    </a>
+                {% endif %}
+            </div>
+            {% if more(post.content) %}
+                <div class="content">{{ more(md(post.content)) }}</div>
+            {% endif %}
+            <div class="post-tags">
+                <div class="tags-label">{{ _("Tags") }}</div>
+                {% for tag in names(post.tags, 'list') %}
+                    <a href="/tag/{{ slug(tag.name) }}/{{ tag.id }}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+        </article>
+    {% endfor %}
+    </section>
+    {% if pages %}
+        <div class="pagination">
+            <div class="pager">
+            {% if page != 1 %}
+                <a href="{% block path %}/post?{% endblock %}p={{ page - 1 }}" class="button" rel="nofollow">
+                    <span class="prev"></span>{{ _("Previous") }}
+                </a>
+            {% endif %}
+            {% if pages != page %}
+                <a href="{{ self.path() }}p={{ page + 1 }}" class="button" rel="nofollow">
+                    {{ _("Next") }}<span class="next"></span>
+                </a>
+            {% endif %}
+            </div>
+            <div class="page-count">{{ _("Page") }} {{ page }} - {{ pages }}</div>
+        </div>
+    {% endif %}
+{% endif %}
+{% endblock %}

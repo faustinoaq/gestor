@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _("Login") }}{% endblock %}
+
+{% block content %}
+<h1 class="page-title">{{ _("Login") }}</h1>
+<form method="POST" class="login">
+    {% if error %}
+        <p class="box error">
+            {{ _("Username or password invalid") }}<span class="close">×</span>
+        </p>
+    {% endif %}
+    <div>
+        <label for="user">{{ _("Username") }}</label>
+        <input type="text" name="user" id="user" required>
+    </div>
+    <div>
+        <label for="password">{{ _("Password") }}</label>
+        <input type="password" name="password" id="password" required>
+    </div>
+    <input type="hidden" name="token" value="{{ token }}" required>
+    <button type="submit" class="anchor">{{ _("Login") }}</button>
+</form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _("New Post") }}{% endblock %}
+
+{% block content %}
+<h1 class="page-title">{{ _("New Post") }}</h1>
+<form method="POST" class="post-form">
+    <div>
+        <label for="title">{{ _("Title") }}</label>
+        <input type="text" name="title" value="{{ title }}" id="title" required>
+    </div>
+    <div>
+        <label for="autor">{{ _("Author") }}</label>
+        <input type="text" name="autor" value="{{ session.user }}" id="autor" required>
+    </div>
+    <div>
+        <label for="tag">{{ _("Tags") }}</label>
+        <input type="text" name="tags" value="{{ tags }}" id="tag" placeholder="example1, example2" required>
+    </div>
+    <div>
+        <input type="checkbox" name="published" value="checked" id="p" {{ published }}>
+        <label for="p">{{ _("Publish") }}</label>
+    </div>
+    <div>
+        <input type="checkbox" name="comment" value="checked" id="c" {{ comment }}>
+        <label for="c">{{ _("Allow comments") }}</label>
+    </div>
+    <div>
+        <label for="content">{{ _("Content") }}</label>
+        <textarea name="content" id="content" required>{{ content }}</textarea>
+    </div>
+    <a href="#" class="button cancel">{{ _("Cancel") }}</a>
+    <button type="submit">{{ _("Save") }}</button>
+</form>
+{% endblock %}

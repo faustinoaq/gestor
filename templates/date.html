@@ -1,0 +1,13 @@
+{% extends 'posts.html' %}
+
+{% block title %}
+    {% if posts %}
+        {{ _("Published on") }} {{ datestr(date) }}
+    {% else %}
+        {{ _("Nothing published on") }} {{ datestr(date) }}
+    {% endif %}
+{% endblock %}
+
+{% block pagetitle %}{{ self.title() }}{% endblock %}
+
+{% block path %}/date/{{ date }}?{% endblock %}

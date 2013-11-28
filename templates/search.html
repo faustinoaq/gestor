@@ -1,0 +1,13 @@
+{% extends 'posts.html' %}
+
+{% block title %}
+    {% if posts %}
+        {{ _("Search result for") }} "{{ search }}"
+    {% else %}
+        {{ _("No search result for") }} "{{ search }}"
+    {% endif %}
+{% endblock %}
+
+{% block pagetitle %}{{ self.title() }}{% endblock %}
+
+{% block path %}/search?s={{ search }}&{% endblock %}

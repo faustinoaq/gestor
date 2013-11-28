@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _("Edit Tag") }} "{{ tag.name }}"{% endblock %}
+
+{% block content %}
+<h1 class="page-title">{{ _("Edit Tag") }} "{{ tag.name }}"</h1>
+<form method="POST" class="form-tag">
+    <input type="text" name="name" value="{{ tag.name }}" required>
+    <input type="hidden" name="p" value={{ p }}>
+    <button type="submit">{{ _("Save") }}</button>
+    <a href="#" class="button cancel">{{ _("Cancel") }}</a>
+</form>
+{% endblock %}

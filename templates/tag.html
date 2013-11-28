@@ -1,0 +1,13 @@
+{% extends 'posts.html' %}
+
+{% block title %}
+    {% if posts %}
+        {{ _("Publications tagged as") }} "{{ tag.name }}"
+    {% else %}
+        {{ _("No publications tagged as") }} "{{ tag.name }}"
+    {% endif %}
+{% endblock %}
+
+{% block pagetitle %}{{ self.title() }}{% endblock %}
+
+{% block path %}/tag/{{ tag.name }}/{{ tag.id }}?{% endblock %}

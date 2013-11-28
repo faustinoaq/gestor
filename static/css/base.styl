@@ -1,0 +1,432 @@
+// Main Stylesheet
+
+@import 'nib'
+@import 'nib/vendor'
+
+@import 'font'
+
+// CSS3 Prefixes
+vendor-prefixes = o ms moz webkit official
+
+// Settings
+
+// Font
+FONTFAMILY = "Open Sans"
+
+// Backgrounds
+BODYBACKGROUND = #F5F5F5
+COMMENTBG      = #F8F8F8
+NAVBACKGROUND  = #E1E1E1
+
+// Font Color
+ACOLOR      = #969696
+FOOTERCOLOR = #BEBEBE
+NAVACOLOR   = #646464
+TITLEPOST   = #A0A0A0
+PAGETITLE   = #787878
+TITLECOLOR  = #8C8C8C
+
+// Border Color
+BORDERINPUT = #C8C8C8
+FOCUSINPUT  = #878787
+LABELFORM   = #6E6E6E
+
+// Buttons
+BUTTONCOLOR = #819BC2
+DANGERCOLOR = #DB6A63
+CANCELCOLOR = #B4B4B4
+
+// Grid
+COLUMN = 960px/12
+
+// Functions
+column(value, widthY=0)
+    display block
+    margin widthY auto
+    max-width value * COLUMN
+
+center()
+    text-align center
+
+block(value)
+    box-sizing border-box
+    display inline-block
+    width (value * 10%) - 1
+
+right(offset=0)
+    text-align right
+    if offset
+        margin-right offset
+
+// Selectors
+// Skeleton
+body
+    background BODYBACKGROUND
+    font-family FONTFAMILY, sans-serif
+    font-size 16px
+    line-height 1.6
+    margin 0
+
+.wrapper
+    margin 0 auto
+    max-width 960px
+    min-width 320px
+
+img
+    border 0
+    max-width 100%
+
+p > img
+    margin 0 auto
+    display block
+
+blockquote
+    color #777
+    font-style italic
+    margin 2% 1%
+
+.container
+    background #FFF
+    min-height 400px
+    padding 25px
+
+.header, .nav
+    background NAVBACKGROUND
+    border-bottom 4px solid darken(NAVBACKGROUND, 30%)
+    overflow hidden
+
+.header h1
+    font-size inherit
+    margin 0
+
+.header h1 a:hover
+    color lighten(NAVACOLOR, 25%)
+    text-decoration none
+
+.header a
+    float left
+
+.header a, .nav a
+    color NAVACOLOR
+    display block
+    font-family FONTFAMILY, sans-serif
+    font-size 1.1em
+    font-weight 700
+    padding 15px 25px
+
+.header > a, .nav a
+    &:hover, &:active
+        color lighten(NAVACOLOR, 100%)
+        background darken(NAVBACKGROUND, 15%)
+        text-decoration none
+        span
+            border-color lighten(NAVACOLOR, 100%)
+
+.menu span
+    // Menu Buttom
+    border-bottom 15px double NAVACOLOR
+    border-top 5px solid NAVACOLOR
+    display block
+    height 5px
+    width 30px
+    margin-bottom 3px
+
+.nav
+    position absolute
+    opacity 0
+    visibility hidden
+    transition opacity 0.4s
+
+.show
+    opacity 1
+    visibility visible
+
+.footer
+    center()
+    color FOOTERCOLOR
+    font-size 14px
+    padding 10px 0
+    border-top 1px solid #ddd
+    font-style italic
+
+// Title and link
+a
+    color ACOLOR
+    text-decoration none
+    &:hover
+        color darken(ACOLOR, 50%)
+        text-decoration underline
+
+h1, h2, h3, h4
+    margin 0
+
+.page-title
+    center()
+    color PAGETITLE
+    font-size 1.6em
+
+.post-title
+h2 a
+    center()
+    color TITLEPOST
+    padding 5px 0
+
+h2 a
+    background #FEFEFE
+    display block
+
+h2 a:hover
+    // More priority than a:hover
+    background #F4F4F4
+    color lighten(TITLEPOST, 25%)
+    text-decoration none
+
+// Forms
+label
+    color LABELFORM
+    margin 0
+
+textarea
+input[type="email"]
+input[type="password"]
+input[type="text"]
+input[type="search"]
+    border 1px solid BORDERINPUT
+    border-radius 3px
+    box-shadow 0 1px 2px #DDD inset
+    box-sizing border-box
+    font-family FONTFAMILY, sans-serif
+    font-size 1em
+    font-weight 400
+    margin 5px 0
+    outline 0
+    padding 6px
+    width 100%
+    &:focus
+        border 1px solid FOCUSINPUT
+
+input[type="search"]
+    border 1px solid darken(NAVBACKGROUND, 30%)
+
+textarea
+    min-height 300px
+
+input.button
+button.button
+    height 36px
+    padding 0 16px
+
+button
+.button
+a.button  // Priority
+    center()
+    background BUTTONCOLOR
+    border none
+    border-radius 4px
+    box-shadow inset 0 .1em 0 rgba(255,255,255,0.1), inset 0 -2px 0 rgba(0,0,0,0.2), 0 2px 0 rgba(0,0,0,0.08)
+    color #FFF
+    cursor pointer
+    display inline-block
+    font-family FONTFAMILY, sans-serif
+    font-size 1.1em
+    font-weight bold
+    line-height 1.8em
+    margin 0px
+    outline 0
+    padding 6px 16px
+    text-decoration none
+    text-shadow rgba(0, 0, 0, 0.09) 0px 1px 0px
+    &:hover
+    &:focus
+        background darken(BUTTONCOLOR, 5%)
+    &:active
+        background darken(BUTTONCOLOR, 20%)
+        box-shadow inset 0 2.5px 0 rgba(255,255,255,0.1), inset 0 1px 0 rgba(0,0,0,0.2), 0 2px 0 rgba(0,0,0,0.075)
+    &.anchor
+        width 100%
+    &.cancel
+        background CANCELCOLOR
+        font-size 0.9em
+        &:hover
+            background darken(CANCELCOLOR, 5%)
+        &:focus
+        &:active
+            background darken(CANCELCOLOR, 20%)
+    &.danger
+        background DANGERCOLOR
+        font-size 0.9em
+        &:hover
+            background darken(DANGERCOLOR, 5%)
+        &:focus
+        &:active
+            background darken(DANGERCOLOR, 20%)
+
+// Arrows with css
+.next, .prev
+    width 0
+    height 0
+    border-top 6px solid transparent
+    border-bottom 6px solid transparent
+    display inline-block
+    vertical-align middle
+
+.next
+    border-left 10px solid #FFF
+    margin 6px 0 8px 8px
+
+.prev
+    border-right 10px solid #FFF
+    margin 6px 8px 8px 0
+
+// Containers
+.posts
+.pagination
+    column(8)
+
+.pager
+    block(6)
+
+.page-count
+    block(4)
+    right()
+    color lighten(TITLECOLOR, 60%)
+    font-size 0.9em
+
+.info
+    margin 10px
+
+.info a
+    color lighten(TITLECOLOR, 30%)
+    font-size 14px
+    padding 8px
+    &:hover
+        background lighten(TITLECOLOR, 90%)
+        text-decoration none
+
+.post-tags
+    color  lighten(TITLECOLOR, 30%)
+    font-size .9em
+    margin-top 20px
+    padding 8px
+    a
+        @extends .info a
+        margin 0 4px
+        line-height 2.5em
+
+.tags-label
+    color darken(TITLECOLOR, 30%)
+    font-size 1.2em
+    font-style italic
+    margin 6px 0
+
+.tags
+    center()
+    column(8, 10px)
+    border-bottom 1px solid #EBEBEB
+    border-top 1px solid #EBEBEB
+
+.pagination
+    margin-top 10px
+
+.tag
+    block(5)
+    background lighten(NAVBACKGROUND, 80%)
+    margin 10px 0
+    padding 10px
+    &:hover
+        background lighten(NAVBACKGROUND, 60%)
+
+.tag-title
+    font-size 1.5em
+    a
+        &:hover
+            text-decoration none
+
+.search
+    margin 5px
+
+.login
+    column(3)
+
+.post
+    center()
+    column(8)
+    border-bottom 1px solid #E9E9E9
+    padding 15px 0
+    &:first-child
+        border-top 1px solid #E9E9E9
+
+article
+    text-align justify
+
+.comments
+.comment-form
+    column(8)
+    padding 20px 0
+
+.form-tag
+    center()
+    column(4)
+    padding 10px
+
+.comment
+    background COMMENTBG
+    border-radius 5px
+    border 1px solid darken(COMMENTBG, 15%)
+    margin 10px auto
+    padding 10px
+
+p
+    margin 5px 0
+
+.comment-name
+    font-size 1em
+
+.comment-date
+    font-size 0.9em
+    color lighten(TITLECOLOR, 20%)
+
+.comment-info
+    block(6)
+    vertical-align top
+
+.rounded
+    border-radius 5px
+
+.content
+    text-align left
+    column(6)
+
+.box
+    center()
+    border-radius 5px
+    box-sizing border-box
+    display inline-block
+    font-size 0.8em
+    margin 5px 0
+    padding 9px
+    width 100%
+    &.error // Add more styles as success, danger, etc.
+        background lighten(DANGERCOLOR, 70%)
+        border 1px solid lighten(DANGERCOLOR, 30%)
+        color DANGERCOLOR
+
+.post-form
+    column(7)
+    div
+        margin-top 20px
+
+.close
+    cursor pointer
+    padding-left 8px
+
+@media screen and (min-width: 600px)
+    // Short input in comment form 
+    .comment-fields
+        block(5)
+
+@media screen and (max-width:450px)
+    // Set the tags to container
+    .tag
+        display block
+        width 100%
