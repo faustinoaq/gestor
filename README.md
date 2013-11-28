@@ -1,5 +1,7 @@
 # Gestor
 
+[![Build Status](https://travis-ci.org/faustinoaq/gestor.png?branch=master)](https://travis-ci.org/faustinoaq/gestor)
+
 **Gestor** is a simple web application for publishing content build in Python.
 
 ![Gestor logo](https://raw.github.com/faustinoaq/gestor/master/static/img/logo.png "Gestor logo")
