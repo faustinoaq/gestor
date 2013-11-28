@@ -2,6 +2,8 @@
 
 **Gestor** is a simple web application for publishing content build in Python.
 
+![Gestor logo](https://raw.github.com/faustinoaq/gestor/master/static/img/logo.png "Gestor logo")
+
 ## Features
 
 - Tags
