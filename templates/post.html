@@ -6,7 +6,7 @@
 
 {% block content %}
 <section id="p{{ post.id }}" class="post">
-    <h2 class="post-title">{{ post.title }}</h2>
+    <h1 class="page-title">{{ post.title }}</h1>
     {% if session.get('logged_in') %}
         <a href="/post/{{ post.id }}/edit" class="button">{{ _("Edit") }}</a>
     {% endif %}

@@ -47,12 +47,12 @@
         <div class="pagination">
             <div class="pager">
             {% if page != 1 %}
-                <a href="{% block path %}/post?{% endblock %}p={{ page - 1 }}" class="button" rel="nofollow">
+                <a rel="prev" href="{% block path %}/post?{% endblock %}p={{ page - 1 }}" class="button">
                     <span class="prev"></span>{{ _("Previous") }}
                 </a>
             {% endif %}
             {% if pages != page %}
-                <a href="{{ self.path() }}p={{ page + 1 }}" class="button" rel="nofollow">
+                <a rel="next" href="{{ self.path() }}p={{ page + 1 }}" class="button">
                     {{ _("Next") }}<span class="next"></span>
                 </a>
             {% endif %}

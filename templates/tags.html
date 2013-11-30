@@ -2,7 +2,7 @@
 
 {% block title %}{{ _("Tags") }}{% endblock %}
 
-{% block description %}{{ _("Tags") }}{% endblock %}
+
 
 {% block content %}
 {% if tags %}
@@ -25,12 +25,12 @@
         <div class="pagination">
             <div class="pager">
             {% if page != 1 %}
-                <a href="/tag?p={{ page - 1 }}" class="button" rel="nofollow">
+                <a rel="prev" href="/tag?p={{ page - 1 }}" class="button">
                     <span class="prev"></span>{{ _("Previous") }}
                 </a>
             {% endif %}
             {% if pages != page %}
-                <a href="/tag?p={{ page + 1 }}" class="button" rel="nofollow">
+                <a rel="next" href="/tag?p={{ page + 1 }}" class="button">
                     {{ _("Next") }}<span class="next"></span>
                 </a>
             {% endif %}
