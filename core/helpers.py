@@ -41,6 +41,8 @@ def paginate(page, limit, count):
 
         >>> paginate('cats', 5, 10)
         (0, 2, 1)
+        >>> paginate(0, 5, 10)
+        (0, 2, 1)
         >>> paginate(3, 5, 1)
         (0, 1, 1)
         >>> paginate(2, 10, 23)
@@ -56,6 +58,8 @@ def paginate(page, limit, count):
     try:
         # For invalid values
         page = int(page)
+        if page == 0:
+            page = 1
     except:
         page = 1
     offset = (page - 1) * limit
