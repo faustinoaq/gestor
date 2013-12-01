@@ -164,6 +164,7 @@ h1, h2, h3, h4
     center()
     color PAGETITLE
     font-size 1.6em
+    margin 10px 0
 
 .post-title
 h2 a
@@ -209,7 +210,10 @@ input[type="search"]
     border 1px solid darken(NAVBACKGROUND, 30%)
 
 textarea
-    min-height 300px
+    min-height 400px
+    font-family "Courier New", monospace
+    font-size 17px
+    line-height 1.7
 
 input.button
 button.button
@@ -231,7 +235,7 @@ a.button  // Priority
     font-size 1.1em
     font-weight bold
     line-height 1.8em
-    margin 0px
+    margin 0 5px 0 0
     outline 0
     padding 6px 16px
     text-decoration none
@@ -282,6 +286,8 @@ a.button  // Priority
 .posts
 .pagination
     column(8)
+    .post:first-child
+        border-top 1px solid #E9E9E9
 
 .pager
     block(6)
@@ -353,8 +359,6 @@ a.button  // Priority
     column(8)
     border-bottom 1px solid #E9E9E9
     padding 15px 0
-    &:first-child
-        border-top 1px solid #E9E9E9
 
 article
     text-align justify
@@ -376,6 +380,11 @@ article
     margin 10px auto
     padding 10px
 
+article p
+    margin 0 0 20px 0
+    font-size 17px
+    line-height 1.8
+
 p
     margin 5px 0
 
@@ -394,8 +403,8 @@ p
     border-radius 5px
 
 .content
-    text-align left
-    column(6)
+    text-align justify
+    column(8)
 
 .box
     center()
@@ -412,16 +421,16 @@ p
         color DANGERCOLOR
 
 .post-form
-    column(7)
+    column(8)
     div
-        margin-top 20px
+        margin-bottom 20px
 
 .close
     cursor pointer
     padding-left 8px
 
 @media screen and (min-width: 600px)
-    // Short input in comment form 
+    // Short input in comment form
     .comment-fields
         block(5)
 

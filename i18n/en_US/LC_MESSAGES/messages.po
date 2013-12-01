@@ -19,7 +19,7 @@ msgstr ""
 msgid "Publications"
 msgstr ""
 
-#: base.html:22 post.html:19 postedit.html:17 postnew.html:17 posts.html:38
+#: base.html:22 post.html:19 postedit.html:29 postnew.html:29 posts.html:38
 #: tags.html:3 tags.html:5 tags.html:9
 msgid "Tags"
 msgstr ""
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: post.html:41 postedit.html:32
+#: post.html:41 postedit.html:33
 msgid "Delete"
 msgstr ""
 
@@ -120,27 +120,27 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: postedit.html:13 postnew.html:13
+#: postedit.html:25 postnew.html:25
 msgid "Author"
 msgstr ""
 
-#: postedit.html:22 postnew.html:22
+#: postedit.html:18 postnew.html:18
 msgid "Publish"
 msgstr ""
 
-#: postedit.html:26 postnew.html:26
+#: postedit.html:22 postnew.html:22
 msgid "Allow comments"
 msgstr ""
 
-#: postedit.html:29 postnew.html:29
+#: postedit.html:13 postnew.html:13
 msgid "Content"
 msgstr ""
 
-#: postedit.html:33 postnew.html:32 tagedit.html:11
+#: postedit.html:34 postnew.html:32 tagedit.html:11
 msgid "Cancel"
 msgstr ""
 
-#: postedit.html:34 postnew.html:33 tagedit.html:10
+#: postedit.html:32 postnew.html:32 tagedit.html:10
 msgid "Save"
 msgstr ""
 
