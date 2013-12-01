@@ -45,6 +45,8 @@ def paginate(page, limit, count):
         (0, 2, 1)
         >>> paginate(3, 5, 1)
         (0, 1, 1)
+        >>> paginate(-3, 5, 1)
+        (0, 1, 1)
         >>> paginate(2, 10, 23)
         (10, 3, 2)
         >>> paginate(200, 20, 40)
@@ -57,7 +59,7 @@ def paginate(page, limit, count):
     """
     try:
         # For invalid values
-        page = int(page)
+        page = abs(int(page))
         if page == 0:
             page = 1
     except:
