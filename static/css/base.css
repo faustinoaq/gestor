@@ -463,7 +463,7 @@ p {
   border-radius: 5px;
 }
 .content {
-  text-align: justify;
+  text-align: left;
   display: block;
   margin: 0 auto;
   max-width: 640px;
