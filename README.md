@@ -4,7 +4,7 @@
 
 **Gestor** is a simple web application for publishing content build in Python.
 
-New 2015 version is comming...
+Working in a new version...
 
 ![Gestor logo](https://raw.github.com/faustinoaq/gestor/master/static/img/logo.png "Gestor logo")
 
