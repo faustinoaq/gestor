@@ -7,6 +7,11 @@ Main Handler
 
 import gettext
 
+if not gettext:
+    def textget(text):
+        return text
+    _ = textget
+
 import web
 from markdown import Markdown
 
@@ -25,6 +30,7 @@ lang.install(True)
 
 
 app = web.application(urls, globals())
+
 
 def encoding():
     """
@@ -277,7 +283,7 @@ class PostNew:
         if helpers.validate(i.title, i.content, i.tags):
             tags = helpers.ids(i.tags)
             Id = models.post.new(i.title, i.content, tags,
-                            i.autor, i.published, i.comment)
+                                 i.autor, i.published, i.comment)
             slug = helpers.slug(i.title)
             raise web.seeother('/post/{1}/{0}'.format(Id, slug))
         return render('postnew.html', title=i.title, comment=i.comment,
