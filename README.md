@@ -6,7 +6,7 @@
 
 Working in a new version...
 
-![Gestor logo](https://raw.github.com/faustinoaq/gestor/master/static/img/logo.png "Gestor logo")
+![I'm here](https://raw.github.com/faustinoaq/gestor/master/static/img/logo.png "Gestor logo")
 
 ## Features
 
