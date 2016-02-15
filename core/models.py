@@ -9,8 +9,11 @@ import time
 
 from .db import db
 
-# Date format for column date
-date = time.strftime('%Y-%m-%d')
+class Date:
+    # Date format for column date
+    date = time.strftime('%Y-%m-%d')
+
+date = Date().date
 
 
 class Posts:
